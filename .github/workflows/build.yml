@@ -94,6 +94,7 @@ jobs:
         build-args: |
           PLACE_COMMIT=${{ needs.platform-info.outputs.commit }}
           TARGET=${{ matrix.service.name }}
+          PLAT_VERSION=${{ needs.platform-info.outputs.version }}
         outputs: type=docker,dest=image.tar
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
